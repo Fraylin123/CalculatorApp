@@ -1,6 +1,6 @@
-
 from tkinter import *
-import math
+from tkinter import messagebox
+import math;
 def press(num):
   global expression
   expression= expression +str(num)
@@ -13,7 +13,7 @@ def equalpress():
     equation.set(total)
     expression=""
   except:
-    equation.set=("error")
+    messagebox.showinfo("Error", " Input not allowed!")
     expression=''
 
 
@@ -23,7 +23,7 @@ def clear():
     expression=""
     equation.set("")
   except:
-    equation.set=("error")
+    messagebox.showinfo("Error", "This is an aler!")
     expression=''
  
 
@@ -32,7 +32,7 @@ if TRUE:
   root=Tk()
   root.title("Calculator App")
   root.geometry("500x500")
-  root.configure(bg="cyan")
+  root.configure(bg="white")
   expression=''
   equation=StringVar()
   expression_field=Entry(root,textvariable=equation)
